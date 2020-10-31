@@ -29,4 +29,20 @@
 		format('truetype'); /* Safari, Android, iOS */
 	text-rendering: optimizeLegibility;
 }
+
+@font-face {
+	font-family: 'PlayfairDisplay';
+	font-weight: 700;
+	src: url('https://res.cloudinary.com/daitiebum/raw/upload/v1604092076/fonts/playfair-display/PlayfairDisplay-Bold.ttf')
+		format('truetype'); /* Safari, Android, iOS */
+	text-rendering: optimizeLegibility;
+}
+
+@font-face {
+	font-family: 'Canela';
+	font-weight: normal;
+	src: url('https://res.cloudinary.com/daitiebum/raw/upload/v1604095507/fonts/canela/Canela-Regular.ttf')
+		format('truetype'); /* Safari, Android, iOS */
+	text-rendering: optimizeLegibility;
+}
   
