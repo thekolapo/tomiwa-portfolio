@@ -17,7 +17,7 @@ export default {
     const links = document.querySelectorAll('a')
     links.forEach((link) => {
       link.addEventListener('mouseover', () => {
-        this.$refs.cMouse.style.setProperty('--size', '58px')
+        this.$refs.cMouse.style.setProperty('--size', '66px')
       })
       link.addEventListener('mouseleave', () => {
         this.$refs.cMouse.style.setProperty('--size', '38px')
