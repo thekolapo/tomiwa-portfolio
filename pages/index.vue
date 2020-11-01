@@ -11,13 +11,13 @@
           <a
             href="https://gomoney.global/"
             target="_blank"
-            class="c-link c-link--green"
+            class="c-link c-link--green c-link--underline"
             >gomoney</a
           >. I curate news for
           <a
             href="https://thatnewnews.substack.com/"
             target="_blank"
-            class="c-link c-link--red"
+            class="c-link c-link--red c-link--underline"
             >that new news</a
           >. A contributor on Global Voices. A.K.A Isale Èkó mami.
         </p>
@@ -222,7 +222,13 @@
       <span>© Adetomiwa Isiaka 2020</span>
       <span>
         Made in Lagos by
-        <a href="" target="_blank" class="c-link c-link--green">Kolapo</a>
+        <a
+          href=""
+          target="_blank"
+          class="c-link c-link--green c-link--underline"
+        >
+          Kolapo</a
+        >
         🤘🏾
       </span>
     </section>
@@ -262,11 +268,37 @@ a,
   text-decoration: none;
 
   &--green {
-    color: $color-green;
+    --color: #{$color-green};
+    color: var(--color);
   }
 
   &--red {
-    color: $color-red;
+    --color: #{$color-red};
+    color: var(--color);
+  }
+
+  &--underline {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1.6px;
+      color: inherit;
+      background-color: var(--color);
+      left: 0;
+      bottom: 3px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.8s $easeOutExpo;
+    }
+
+    &:hover {
+      &::after {
+        transform: scaleX(1);
+      }
+    }
   }
 }
 
@@ -351,6 +383,9 @@ a,
       font-size: 2.5rem;
       line-height: 40px;
       margin-top: 20px;
+      // font-size: 3rem;
+      // line-height: 48px;
+      // margin-top: 30px;
     }
   }
 }
