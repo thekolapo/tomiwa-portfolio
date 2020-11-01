@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <c-mouse />
     <section class="c-section c-hero">
       <div class="c-hero__text-wrap">
         <h1 class="c-section__heading">Adetomiwa Isiaka</h1>
@@ -379,7 +380,7 @@ a,
       transition: 1.2s $easeOutExpo;
 
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.12);
       }
     }
 
