@@ -29,6 +29,7 @@
         </p>
       </div>
       <div class="c-hero__image">
+        <div class="c-hero__image-overlay" />
         <img
           id="js-hero-img"
           src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/AABEIAA4ACgMBEQACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/APsT9tT9s39rjwD4z8Sa5+zfp2mj4IeBPgt8WPGHizxV4m8J6P4i0vWfiBJrPinTvCOiafbR3cmvSancI3htvD2mFdLttb+06vLHb64tjcLpv5vTw+BrQl7eDnTxGNwuHcnNwUIVMRTU5b2Sd5WlJ2Tj30f2NB1KkpV4YyVN4ahi6kMMqKm6840qkoXlJXUYRSbUbKyabu1f6i+Avxl8C+OPgZ8GPGvxE8QeA7H4geL/AIT/AA68UeOrL7LY6R9j8Y+IPCGj6t4ntf7KllMumfZ9bu76L+z5SZLLZ9mclojXh4qjQpYrE0qUU6VLEVqdN25r04VJRg+ZK0rxS1Wj3O2lOpOlTnPn5pU4Sl7sl70opvS2mrP5c/j3+3T4k0DxjceFP7b+IOh/D+9+G/hCG+8L+DrzSdKuvE9zYat4hBOr687G60vT7PU7Nrm2sLe31iO/aKGe5Nokz2EH2+XZb9YoLncZU415xqw5uRzScKluZ06is3y7RjJPmtJ6M8Gtj4YD2fJSVSu6SlCpVj7SnSupRXLR54RlLR3dRzjayVPdv7/8M/FP9oGfw34fmt/F2itbzaHpMsBurHRftJhksLd4jceV4M8rzyhUy+X+78zds+XFTKjkilJPJ4NqTTf1rEK7T1dk0tX2SXkc3tcweqzCaT1S+rUdPLc//9k="
@@ -39,7 +40,7 @@
       </div>
     </section>
     <p class="c-section-no">002</p>
-    <section class="c-section c-skillset">
+    <section ref="skillsetSection" class="c-section c-skillset">
       <h1 class="c-section__heading">What I do</h1>
       <p class="c-section__subtext">
         A multitalented queen, I can do and undo. I’m a content strategist and
@@ -168,7 +169,7 @@
       </div>
     </section>
     <p class="c-section-no">003</p>
-    <section class="c-section c-contact">
+    <section ref="contactSection" class="c-section c-contact">
       <h1 class="c-section__heading">Contact</h1>
       <p class="c-section__subtext">
         Now that you already know me, let’s work together and create some sweet
@@ -255,7 +256,36 @@
 import 'lazysizes'
 import 'lazysizes/plugins/parent-fit/ls.parent-fit'
 
-export default {}
+export default {
+  mounted() {
+    const observer = new IntersectionObserver(this.onElementObserved)
+
+    const observableSections = [
+      this.$refs.skillsetSection,
+      this.$refs.contactSection,
+    ]
+
+    observableSections.forEach((section) => {
+      observer.observe(section)
+    })
+  },
+  methods: {
+    onElementObserved(entries) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          switch (entry.target) {
+            case this.$refs.skillsetSection:
+            case this.$refs.contactSection: {
+              entry.target.style.setProperty('--h1-translate-value', '0px')
+              entry.target.style.setProperty('--subtext-opacity', '1')
+              entry.target.style.setProperty('--subtext-translate-value', '0px')
+            }
+          }
+        }
+      })
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -266,12 +296,39 @@ export default {}
 .c-section {
   width: 80%;
   margin: 0 auto;
+  --h1-translate-value: 100%;
+  --subtext-opacity: 0;
+  --subtext-translate-value: 100%;
 
   &__heading {
+    position: relative;
     font-size: 11.3rem;
     font-family: 'PlayfairDisplay';
     font-weight: normal;
     text-transform: uppercase;
+    color: transparent;
+    z-index: -1;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      left: 0;
+      color: black;
+      transform: translateY(var(--h1-translate-value));
+      transition: transform 1.4s $easeOutExpo 0.2s;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: $color-linen;
+      transform: translateY(100%);
+      z-index: 1;
+    }
   }
 
   &__subtext {
@@ -279,6 +336,9 @@ export default {}
     line-height: 45px;
     margin-top: 60px;
     max-width: 750px;
+    opacity: var(--subtext-opacity);
+    transform: translateY(var(--subtext-translate-value));
+    transition: transform 2s $easeOutExpo 0.4s, opacity 2s $easeOutExpo 0.5s;
   }
 }
 
@@ -335,6 +395,27 @@ a,
   display: flex;
   justify-content: space-between;
   margin-top: 148px;
+  // $anim-duration: 1.4s;
+  $anim-duration: 1.2s;
+  $anim-delay: 0.3s;
+
+  @keyframes slideup {
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+  @keyframes fadein {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeout {
+    to {
+      opacity: 0;
+    }
+  }
 
   &__text {
     &-wrap {
@@ -352,6 +433,7 @@ a,
         position: absolute;
         margin-left: 9px;
         opacity: 0;
+        top: 0;
         transform: translateX(12%);
         transition: 1s $easeOutExpo;
         pointer-events: none;
@@ -370,26 +452,72 @@ a,
     text-transform: capitalize;
     white-space: nowrap;
     pointer-events: none;
+    color: transparent;
+    z-index: 0;
     // font-weight: 500;
+
+    &::after {
+      content: 'Adetomiwa Isiaka';
+      width: 140%;
+      animation: slideup $anim-duration $easeOutExpo $anim-delay forwards;
+    }
+
+    &::before {
+      width: 140%;
+      animation: fadeout 0s calc(#{$anim-delay} + 0.5s) forwards;
+    }
   }
 
   .c-section__subtext {
+    --subtext-translate-value: 15%;
     margin-top: 45px;
     max-width: 620px;
     width: 100%;
+    animation: slideup calc(#{$anim-duration} + 0.6s) $easeOutExpo
+        calc(#{$anim-delay} + 0.7s) forwards,
+      fadein calc(#{$anim-duration} + 0.6s) $easeOutExpo
+        calc(#{$anim-delay} + 0.8s) forwards;
   }
 
   &__image {
+    position: relative;
     width: 525px;
     height: 80vh;
     max-height: 725px;
     overflow: hidden;
+    z-index: 0;
+
+    @keyframes scaleoverlay {
+      to {
+        transform: scaleY(0);
+      }
+    }
+
+    @keyframes scaleimage {
+      from {
+        transform: scale(1.3);
+      }
+    }
+
+    &-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      z-index: 10;
+      background-color: $color-linen;
+      animation: scaleoverlay calc(#{$anim-duration} - 0.2s) $easeOutExpo
+        calc(#{$anim-delay} + 1.5s) forwards;
+      transform-origin: bottom;
+    }
 
     img {
       transition: 1.2s $easeOutExpo;
       object-fit: cover;
       height: 100%;
       width: 100%;
+      animation: scaleimage calc(1.2s + 0.5s) $easeOutExpo
+        calc(#{$anim-delay} + 1.5s);
       // filter: blur(25px);
 
       &:hover {
@@ -401,6 +529,12 @@ a,
 
 .c-skillset {
   flex-direction: column;
+
+  .c-section__heading {
+    &::after {
+      content: 'What I do';
+    }
+  }
 
   &__skill {
     display: flex;
@@ -439,6 +573,12 @@ a,
 
 .c-contact {
   flex-direction: column;
+
+  .c-section__heading {
+    &::after {
+      content: 'Contact';
+    }
+  }
 
   &__links {
     display: flex;
