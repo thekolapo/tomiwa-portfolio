@@ -29,7 +29,13 @@
         </p>
       </div>
       <div class="c-hero__image">
-        <img src="~/assets/images/tomiwa.jpg" alt="tomiwa's picture" />
+        <img
+          id="js-hero-img"
+          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/AABEIAA4ACgMBEQACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/APsT9tT9s39rjwD4z8Sa5+zfp2mj4IeBPgt8WPGHizxV4m8J6P4i0vWfiBJrPinTvCOiafbR3cmvSancI3htvD2mFdLttb+06vLHb64tjcLpv5vTw+BrQl7eDnTxGNwuHcnNwUIVMRTU5b2Sd5WlJ2Tj30f2NB1KkpV4YyVN4ahi6kMMqKm6840qkoXlJXUYRSbUbKyabu1f6i+Avxl8C+OPgZ8GPGvxE8QeA7H4geL/AIT/AA68UeOrL7LY6R9j8Y+IPCGj6t4ntf7KllMumfZ9bu76L+z5SZLLZ9mclojXh4qjQpYrE0qUU6VLEVqdN25r04VJRg+ZK0rxS1Wj3O2lOpOlTnPn5pU4Sl7sl70opvS2mrP5c/j3+3T4k0DxjceFP7b+IOh/D+9+G/hCG+8L+DrzSdKuvE9zYat4hBOr687G60vT7PU7Nrm2sLe31iO/aKGe5Nokz2EH2+XZb9YoLncZU415xqw5uRzScKluZ06is3y7RjJPmtJ6M8Gtj4YD2fJSVSu6SlCpVj7SnSupRXLR54RlLR3dRzjayVPdv7/8M/FP9oGfw34fmt/F2itbzaHpMsBurHRftJhksLd4jceV4M8rzyhUy+X+78zds+XFTKjkilJPJ4NqTTf1rEK7T1dk0tX2SXkc3tcweqzCaT1S+rUdPLc//9k="
+          data-src="https://res.cloudinary.com/daitiebum/image/upload/v1604398570/tomiwa-website/tomiwa-min.jpg"
+          class="lazyload"
+          alt="tomiwa's picture"
+        />
       </div>
     </section>
     <p class="c-section-no">002</p>
@@ -246,6 +252,9 @@
 </template>
 
 <script>
+import 'lazysizes'
+import 'lazysizes/plugins/parent-fit/ls.parent-fit'
+
 export default {}
 </script>
 
@@ -378,7 +387,10 @@ a,
 
     img {
       transition: 1.2s $easeOutExpo;
-      object-fit: contain;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      // filter: blur(25px);
 
       &:hover {
         transform: scale(1.05);
