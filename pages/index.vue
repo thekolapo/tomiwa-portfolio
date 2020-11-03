@@ -5,21 +5,27 @@
       <div class="c-hero__text-wrap">
         <h1 class="c-section__heading">Adetomiwa Isiaka</h1>
         <p class="c-section__subtext">
-          I’m a content strategist and writer currently living in Lagos Nigeria,
-          and working at gomoney. I curate news for that new news. and working
-          at
+          I’m a content developer currently working in Lagos, Nigeria.
+          Presently, I work as a content strategist, copy writer, content writer
+          and marketer at
           <a
             href="https://gomoney.global/"
             target="_blank"
             class="c-link c-link--green c-link--underline"
             >gomoney</a
-          >. I curate news for
+          >, and a curator at
           <a
             href="https://thatnewnews.substack.com/"
             target="_blank"
             class="c-link c-link--red c-link--underline"
-            >that new news</a
-          >. A contributor on Global Voices. A.K.A Isale Èkó mami.
+            >That New News</a
+          >. I’m also a contributor at
+          <a
+            href="https://globalvoices.org/author/adetomiwa-isiaka/"
+            class="c-link c-link--green c-link--underline"
+            >Global Voices</a
+          >
+          and a sometimes <span class="c-hero__text-yogi">yogi</span>.
         </p>
       </div>
       <div class="c-hero__image">
@@ -219,18 +225,22 @@
       </div>
     </section>
     <section class="c-section c-footer">
-      <span>© Adetomiwa Isiaka 2020</span>
-      <span>
-        Made in Lagos by
-        <a
-          href=""
-          target="_blank"
-          class="c-link c-link--green c-link--underline"
-        >
-          Kolapo</a
-        >
-        🤘🏾
-      </span>
+      <div class="c-footer__column">
+        <span>© 2020</span>
+        <span class="c-footer__site-designer">
+          Made in Lagos by
+          <a
+            href=""
+            target="_blank"
+            class="c-link c-link--green c-link--underline"
+          >
+            Kolapo</a
+          >
+          🤘🏾
+        </span>
+      </div>
+      <div class="c-footer__column">Back to top</div>
+      <div class="c-footer__column">Green mode</div>
     </section>
   </div>
 </template>
@@ -265,6 +275,7 @@ export default {}
 
 a,
 .c-link {
+  outline: none;
   text-decoration: none;
 
   &--green {
@@ -316,10 +327,34 @@ a,
   justify-content: space-between;
   margin-top: 148px;
 
-  &__text-wrap {
-    padding-top: 70px;
-    width: 50%;
-    z-index: 1;
+  &__text {
+    &-wrap {
+      padding-top: 70px;
+      width: 50%;
+      z-index: 1;
+    }
+
+    &-yogi {
+      position: relative;
+      color: $color-orange;
+
+      &::after {
+        content: '🧘🏽‍♀️';
+        position: absolute;
+        margin-left: 9px;
+        opacity: 0;
+        transform: translateX(12%);
+        transition: 1s $easeOutExpo;
+        pointer-events: none;
+      }
+
+      &:hover {
+        &::after {
+          opacity: 1;
+          transform: translateX(0%);
+        }
+      }
+    }
   }
 
   .c-section__heading {
@@ -463,16 +498,31 @@ a,
 
 .c-footer {
   margin-top: 165px;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 2.2rem;
+  font-size: 2rem;
+  text-transform: uppercase;
 
-  span {
-    &:last-child {
+  &__column {
+    width: 33.33%;
+
+    &:first-child {
       transform: translateY(-7%);
     }
+
+    &:nth-child(2) {
+      text-align: center;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  &__site-designer {
+    margin-left: 35px;
   }
 }
 </style>
