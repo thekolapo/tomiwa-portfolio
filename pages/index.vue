@@ -474,9 +474,9 @@ a,
     max-width: 620px;
     width: 100%;
     animation: slideup calc(#{$anim-duration} + 0.6s) $easeOutExpo
-        calc(#{$anim-delay} + 0.7s) forwards,
+        calc(#{$anim-delay} + 0.5s) forwards,
       fadein calc(#{$anim-duration} + 0.6s) $easeOutExpo
-        calc(#{$anim-delay} + 0.8s) forwards;
+        calc(#{$anim-delay} + 0.6s) forwards;
   }
 
   &__image {
@@ -507,7 +507,7 @@ a,
       z-index: 10;
       background-color: $color-linen;
       animation: scaleoverlay calc(#{$anim-duration} - 0.2s) $easeOutExpo
-        calc(#{$anim-delay} + 1.5s) forwards;
+        calc(#{$anim-delay} + 1.2s) forwards;
       transform-origin: bottom;
     }
 
@@ -516,12 +516,12 @@ a,
       object-fit: cover;
       height: 100%;
       width: 100%;
-      animation: scaleimage calc(1.2s + 0.5s) $easeOutExpo
-        calc(#{$anim-delay} + 1.5s);
+      animation: scaleimage calc(#{$anim-duration} + 0.5s) $easeOutExpo
+        calc(#{$anim-delay} + 1.2s);
       // filter: blur(25px);
 
       &:hover {
-        transform: scale(1.05);
+        transform: scale(1.06);
       }
     }
   }
