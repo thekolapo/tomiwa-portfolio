@@ -27,6 +27,38 @@
           >
           and a sometimes <span class="c-hero__text-yogi">yogi</span>.
         </p>
+        <div class="c-hero__scroll">
+          <svg
+            viewBox="0 0 120 120"
+            fill="transparent"
+            class="c-hero__scroll-circle"
+          >
+            <circle
+              cx="60"
+              cy="60"
+              r="59.5"
+              stroke="black"
+              stroke-width="0.7"
+            />
+          </svg>
+          <svg
+            x="0px"
+            y="0px"
+            viewBox="0 0 512 512"
+            class="c-hero__scroll-arrow"
+          >
+            <g>
+              <g>
+                <path
+                  d="M455.543,301.781c-4.16-4.16-10.923-4.16-15.083,0L266.657,475.584V10.667C266.657,4.779,261.879,0,255.991,0
+			c-5.888,0-10.667,4.779-10.667,10.667v464.917L71.543,301.803c-4.16-4.16-10.923-4.16-15.083,0c-4.16,4.16-4.16,10.923,0,15.083
+			l191.979,191.979c0.981,0.981,2.176,1.771,3.477,2.325c1.301,0.533,2.688,0.811,4.075,0.811c1.387,0,2.773-0.277,4.075-0.811
+			c1.323-0.533,2.496-1.323,3.477-2.325l191.979-191.979C459.703,312.704,459.703,305.963,455.543,301.781z"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
       </div>
       <div class="c-hero__image">
         <div class="c-hero__image-overlay" />
@@ -43,8 +75,8 @@
     <section ref="skillsetSection" class="c-section c-skillset">
       <h1 class="c-section__heading">What I do</h1>
       <p class="c-section__subtext">
-        A multitalented queen, I can do and undo. I’m a content strategist and
-        writer currently living in Lagos Nigeria.
+        My goal is to help you craft the best formats and mediums to talk to
+        your users with a productive mix of all my skillsets.
       </p>
       <div class="c-skillset__skill c-skillset__skill--first">
         <svg
@@ -73,12 +105,14 @@
             </clipPath>
           </defs>
         </svg>
-        <h4 class="c-skillset__skill-title">Content Development</h4>
+        <h4 class="c-skillset__skill-title">Content Strategy</h4>
         <p class="c-skillset__skill-subtext">
-          A multitalented queen, I can do and undo. Work with me to take your
-          content strategy to the next level. I will leverage my copywriting,
-          storytelling, analytics, and content delivery skills to develop
-          compelling, world-class content strategies guaranteed to increase
+          The first step is always to understand what you’re trying to do and
+          why you’re trying to do it. After that potentially energy zapping
+          conversation, I will create a content map that highlights the best
+          mediums, tone and strategy to meet your goal from the content and
+          end-user stand point. It’s a lot of work, but my mum calls me
+          “overzealous” so you’re in safe hands.
         </p>
       </div>
       <div class="c-skillset__skill">
@@ -96,12 +130,16 @@
             fill-opacity="0.4"
           />
         </svg>
-        <h4 class="c-skillset__skill-title">PRODUCT MARKETING</h4>
+        <h4 class="c-skillset__skill-title">
+          Product Marketing and Content Development
+        </h4>
         <p class="c-skillset__skill-subtext">
-          A multitalented queen, I can do and undo. Work with me to take your
-          content strategy to the next level. I will leverage my copywriting,
-          storytelling, analytics, and content delivery skills to develop
-          compelling, world-class content strategies guaranteed to increase
+          Finding the right customers for your product. I will work with your
+          user research team and research similar products to determine who your
+          ideal customers and build a marketing strategy that speaks directly to
+          their needs in relation to your product. This will require visual
+          communication written communication and content strategy to spark
+          interest.
         </p>
       </div>
       <div class="c-skillset__skill">
@@ -136,12 +174,12 @@
             </clipPath>
           </defs>
         </svg>
-        <h4 class="c-skillset__skill-title">NEWSLETTER WRITING</h4>
+        <h4 class="c-skillset__skill-title">Copywriting</h4>
         <p class="c-skillset__skill-subtext">
-          A multitalented queen, I can do and undo. Work with me to take your
-          content strategy to the next level. I will leverage my copywriting,
-          storytelling, analytics, and content delivery skills to develop
-          compelling, world-class content strategies guaranteed to increase
+          A multitalented royal, I will leverage my copywriting, storytelling,
+          analytics, content strategy and delivery skills to grab the attention
+          of the right audience and position your product as the market leader
+          in your industry.
         </p>
       </div>
       <div class="c-skillset__skill">
@@ -159,12 +197,10 @@
             fill-opacity="0.4"
           />
         </svg>
-        <h4 class="c-skillset__skill-title">PRODUCT MARKETING</h4>
+        <h4 class="c-skillset__skill-title">Content Manager</h4>
         <p class="c-skillset__skill-subtext">
-          A multitalented queen, I can do and undo. Work with me to take your
-          content strategy to the next level. I will leverage my copywriting,
-          storytelling, analytics, and content delivery skills to develop
-          compelling, world-class content strategies guaranteed to increase
+          Need someone to execute or manage a specific part of your newsletters
+          or subject-specific blog posts? Call me!
         </p>
       </div>
     </section>
@@ -172,8 +208,7 @@
     <section ref="contactSection" class="c-section c-contact">
       <h1 class="c-section__heading">Contact</h1>
       <p class="c-section__subtext">
-        Now that you already know me, let’s work together and create some sweet
-        magic. You know I’m the fucking best.
+        Now that you know a little about me, let’s talk about you
       </p>
       <div class="c-contact__links">
         <a href="" target="_blank">say hello</a>
@@ -399,7 +434,7 @@ a,
   $anim-duration: 1.2s;
   $anim-delay: 0.3s;
 
-  @keyframes slideup {
+  @keyframes slidein {
     to {
       transform: translateY(0%);
     }
@@ -419,6 +454,8 @@ a,
 
   &__text {
     &-wrap {
+      display: flex;
+      flex-direction: column;
       padding-top: 70px;
       width: 50%;
       z-index: 1;
@@ -459,7 +496,7 @@ a,
     &::after {
       content: 'Adetomiwa Isiaka';
       width: 140%;
-      animation: slideup $anim-duration $easeOutExpo $anim-delay forwards;
+      animation: slidein $anim-duration $easeOutExpo $anim-delay forwards;
     }
 
     &::before {
@@ -473,9 +510,9 @@ a,
     margin-top: 45px;
     max-width: 620px;
     width: 100%;
-    animation: slideup calc(#{$anim-duration} + 0.6s) $easeOutExpo
+    animation: slidein calc(#{$anim-duration} + 0.5s) $easeOutExpo
         calc(#{$anim-delay} + 0.5s) forwards,
-      fadein calc(#{$anim-duration} + 0.6s) $easeOutExpo
+      fadein calc(#{$anim-duration} + 0.5s) $easeOutExpo
         calc(#{$anim-delay} + 0.6s) forwards;
   }
 
@@ -507,7 +544,7 @@ a,
       z-index: 10;
       background-color: $color-linen;
       animation: scaleoverlay calc(#{$anim-duration} - 0.2s) $easeOutExpo
-        calc(#{$anim-delay} + 1.2s) forwards;
+        calc(#{$anim-delay} + 0.6s) forwards;
       transform-origin: bottom;
     }
 
@@ -516,12 +553,98 @@ a,
       object-fit: cover;
       height: 100%;
       width: 100%;
-      animation: scaleimage calc(#{$anim-duration} + 0.5s) $easeOutExpo
-        calc(#{$anim-delay} + 1.2s);
+      animation: scaleimage calc(#{$anim-duration} + 0.8s) $easeOutExpo
+        calc(#{$anim-delay} + 0.6s);
       // filter: blur(25px);
 
       &:hover {
-        transform: scale(1.06);
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__scroll {
+    $size: 80px;
+    position: relative;
+    width: $size;
+    height: $size;
+    // background-color: $color-green;
+    margin-top: auto;
+    border-radius: 100px;
+    // border: 0.5px solid rgb(134, 134, 134);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border 1s $easeOutExpo;
+    opacity: 0;
+    animation: fadein 0s linear 2s forwards;
+    $anim-delay: 2s;
+    $anim-duration: 0.42s;
+
+    @keyframes drawcircle {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: $size;
+      height: $size;
+      background-color: $color-green;
+      transform: translate(45%, -30%) scale(0.8);
+      border-radius: inherit;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0;
+      transition: transform 1s $easeOutExpo;
+      animation: fadein calc(#{$anim-duration} + 0.6s) linear
+        calc(#{$anim-delay} + 1s) forwards;
+    }
+
+    &-circle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      --length: 375;
+      stroke-dasharray: var(--length);
+      stroke-dashoffset: var(--length);
+      transform: rotate(-45deg);
+      animation: drawcircle $anim-duration linear $anim-delay forwards;
+    }
+
+    &-arrow {
+      $size: 25px;
+      width: $size;
+      height: $size;
+      transform: translateY(-40%);
+      opacity: 0;
+      animation: slidein calc(#{$anim-duration} + 0.8s) $easeOutExpo
+          calc(#{$anim-delay} + 0.3s) forwards,
+        fadein calc(#{$anim-duration} + 0.4s) linear calc(#{$anim-delay} + 0.3s)
+          forwards;
+
+      path {
+        transition: fill 1s $easeOutExpo;
+      }
+    }
+
+    &:hover {
+      border: 0.5px dashed transparent;
+
+      .c-hero__scroll-circle {
+        circle {
+          stroke-width: 0;
+        }
+      }
+
+      &::after {
+        transform: translate(0%, 0%) scale(1);
+      }
+
+      svg path {
+        fill: #f6eee3;
       }
     }
   }
@@ -560,13 +683,14 @@ a,
     }
 
     &-subtext {
-      max-width: 700px;
-      font-size: 2.5rem;
-      line-height: 40px;
-      margin-top: 20px;
-      // font-size: 3rem;
-      // line-height: 48px;
-      // margin-top: 30px;
+      max-width: 740px;
+      // font-size: 2.5rem;
+      // line-height: 40px;
+      // margin-top: 20px;
+
+      font-size: 3rem;
+      line-height: 45px;
+      margin-top: 30px;
     }
   }
 }
