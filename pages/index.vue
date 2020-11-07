@@ -31,7 +31,7 @@
           >
           and a sometimes <span class="c-hero__text-yogi">yogi</span>.
         </p>
-        <div class="c-hero__scroll">
+        <a class="c-hero__scroll" href="#work">
           <svg
             viewBox="0 0 120 120"
             fill="transparent"
@@ -62,7 +62,7 @@
               </g>
             </g>
           </svg>
-        </div>
+        </a>
       </div>
       <div class="c-hero__image">
         <div class="c-hero__image-overlay" />
@@ -76,7 +76,7 @@
       </div>
     </section>
     <p class="c-section-no">002</p>
-    <section ref="skillsetSection" class="c-section c-skillset">
+    <section id="work" ref="skillsetSection" class="c-section c-skillset">
       <h1 class="c-section__heading">What I do</h1>
       <p class="c-section__subtext">
         My goal is to help you craft the best formats and mediums to talk to
@@ -443,6 +443,7 @@ nav {
   &__heading {
     position: relative;
     font-size: 11.3rem;
+    font-size: 6.73vw;
     font-family: 'PlayfairDisplay';
     font-weight: normal;
     text-transform: uppercase;
@@ -688,6 +689,7 @@ a,
     animation: fadein 0s linear 2s forwards;
     $anim-delay: 2s;
     $anim-duration: 0.42s;
+    cursor: pointer;
 
     @keyframes drawcircle {
       to {
