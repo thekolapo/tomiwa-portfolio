@@ -1,6 +1,10 @@
 <template>
   <div id="#" class="container">
     <c-mouse />
+    <nav>
+      <a class="c-link c-link--underline" href=".">Adetomiwa Isiaka</a>
+      <a class="c-link c-link--underline" href="#contact">Get in touch</a>
+    </nav>
     <section class="c-section c-hero">
       <div class="c-hero__text-wrap">
         <h1 class="c-section__heading">Adetomiwa Isiaka</h1>
@@ -247,7 +251,7 @@
       </div>
     </section>
     <p class="c-section-no">003</p>
-    <section ref="contactSection" class="c-section c-contact">
+    <section id="contact" ref="contactSection" class="c-section c-contact">
       <h1 class="c-section__heading">Contact</h1>
       <p class="c-section__subtext">
         Now that you know a little about me, let’s talk about you
@@ -416,9 +420,22 @@ export default {
   margin: 0 auto;
 }
 
+nav,
 .c-section {
   width: 80%;
   margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+.c-section {
   --h1-translate-value: 100%;
   --subtext-opacity: 0;
   --subtext-translate-value: 100%;
@@ -471,6 +488,7 @@ a,
   outline: none;
   text-decoration: none;
   color: black;
+  --color: black;
 
   &--green {
     --color: #{$color-green};
@@ -519,7 +537,7 @@ a,
 .c-hero {
   display: flex;
   justify-content: space-between;
-  margin-top: 148px;
+  margin-top: 110px;
   // $anim-duration: 1.4s;
   $anim-duration: 1.2s;
   $anim-delay: 0.3s;
