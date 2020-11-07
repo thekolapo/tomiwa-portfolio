@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="#" class="container">
     <c-mouse />
     <section class="c-section c-hero">
       <div class="c-hero__text-wrap">
@@ -308,7 +308,7 @@
         </a>
       </div>
     </section>
-    <section class="c-section c-footer">
+    <section ref="footer" class="c-section c-footer">
       <div class="c-footer__column">
         <span>© 2020</span>
         <span class="c-footer__site-designer">
@@ -323,8 +323,12 @@
           🤘🏾
         </span>
       </div>
-      <div class="c-footer__column">Back to top</div>
-      <div class="c-footer__column">Green mode</div>
+      <div class="c-footer__column"><a href="#">Back to top</a></div>
+      <div class="c-footer__column">
+        <button ref="footerButton" class="" @click="changeBGColor()">
+          <span>{{ footerButtonText }}</span>
+        </button>
+      </div>
     </section>
   </div>
 </template>
@@ -334,9 +338,19 @@ import 'lazysizes'
 import 'lazysizes/plugins/parent-fit/ls.parent-fit'
 
 export default {
+  data() {
+    return {
+      backgroundIsLightMode: true,
+      defaultBackgroundCOlor: null,
+      footerButtonText: 'Green mode',
+    }
+  },
   mounted() {
-    const observer = new IntersectionObserver(this.onElementObserved)
+    this.defaultBackgroundCOlor = window
+      .getComputedStyle(document.body)
+      .getPropertyValue('background-color')
 
+    const observer = new IntersectionObserver(this.onElementObserved)
     const observableSections = [
       this.$refs.skillsetSection,
       this.$refs.contactSection,
@@ -347,6 +361,38 @@ export default {
     })
   },
   methods: {
+    changeBGColor() {
+      if (this.backgroundIsLightMode)
+        document.body.style.setProperty('--bg-color', '#E3F6E8')
+      else
+        document.body.style.setProperty(
+          '--bg-color',
+          this.defaultBackgroundCOlor
+        )
+
+      const animateButton = () => {
+        this.$refs.footerButton.style.setProperty('--translate-value', '-100%')
+        // this.$refs.footerButton.style.pointerEvents = 'none'
+
+        setTimeout(() => {
+          this.$refs.footerButton.style.setProperty('--transition-time', '0s')
+          this.$refs.footerButton.style.setProperty('--translate-value', '100%')
+
+          setTimeout(() => {
+            this.footerButtonText = this.backgroundIsLightMode
+              ? 'Green mode'
+              : 'Light mode'
+
+            this.$refs.footerButton.style.setProperty('--transition-time', '1s')
+            this.$refs.footerButton.style.setProperty('--translate-value', '0%')
+            // this.$refs.footerButton.style.pointerEvents = 'auto'
+          }, 50)
+        }, 300)
+      }
+
+      animateButton()
+      this.backgroundIsLightMode = !this.backgroundIsLightMode
+    },
     onElementObserved(entries) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -402,7 +448,8 @@ export default {
       content: '';
       width: 100%;
       height: 100%;
-      background-color: $color-linen;
+      background-color: var(--bg-color);
+      transition: var(--bg-color-transition);
       transform: translateY(100%);
       z-index: 1;
     }
@@ -423,6 +470,7 @@ a,
 .c-link {
   outline: none;
   text-decoration: none;
+  color: black;
 
   &--green {
     --color: #{$color-green};
@@ -841,6 +889,52 @@ a,
 
   &__site-designer {
     margin-left: 35px;
+  }
+
+  a,
+  button {
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: $color-green;
+    }
+  }
+
+  button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    text-transform: inherit;
+    padding: 0;
+    --translate-value: 0;
+    --transition-time: 1s;
+
+    span {
+      display: inline-block;
+      transform: translateY(var(--translate-value));
+      transition: var(--transition-time) $easeOutExpo;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-color: var(--bg-color);
+      transition: var(--bg-color-transition);
+      z-index: 1;
+    }
+
+    &::before {
+      top: 100%;
+    }
+
+    &:after {
+      bottom: 100%;
+    }
   }
 }
 </style>

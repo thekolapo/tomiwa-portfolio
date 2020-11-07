@@ -18,11 +18,14 @@ html {
 }
 
 body {
+  --bg-color: #{$color-linen};
+  --bg-color-transition:  background 0.8s linear;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
   overscroll-behavior-y: none;
   overflow-x: hidden;
-  background-color: $color-linen;
+  background-color: var(--bg-color);
+  transition: var(--bg-color-transition);
 }
 
 input,

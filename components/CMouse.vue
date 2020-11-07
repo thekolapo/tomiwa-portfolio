@@ -14,12 +14,14 @@ export default {
     window.addEventListener('mousemove', this.trackCursor)
     window.addEventListener('scroll', this.handleScroll)
 
-    const links = document.querySelectorAll('a')
-    links.forEach((link) => {
-      link.addEventListener('mouseover', () => {
+    const links = Array.from(document.querySelectorAll('a'))
+    const buttons = Array.from(document.querySelectorAll('button'))
+    const clickableElements = links.concat(buttons)
+    clickableElements.forEach((element) => {
+      element.addEventListener('mouseover', () => {
         this.$refs.cMouse.style.setProperty('--size', '66px')
       })
-      link.addEventListener('mouseleave', () => {
+      element.addEventListener('mouseleave', () => {
         this.$refs.cMouse.style.setProperty('--size', '38px')
       })
     })
