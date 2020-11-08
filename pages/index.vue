@@ -602,6 +602,7 @@ a,
   @include screen('small') {
     font-size: 16rem;
     margin-top: 100px;
+    transform: translateX(0px);
   }
 }
 
