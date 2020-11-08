@@ -1,5 +1,5 @@
 <template>
-  <div ref="cMouse" class="c-mouse" />
+  <div v-if="!disableCustomCursor" ref="cMouse" class="c-mouse" />
 </template>
 <script>
 export default {
@@ -7,12 +7,17 @@ export default {
     return {
       size: null,
       event: null,
+      disableCustomCursor: false,
     }
   },
   mounted() {
     this.size = this.$refs.cMouse.getBoundingClientRect().width
     window.addEventListener('mousemove', this.trackCursor)
     window.addEventListener('scroll', this.handleScroll)
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
+      // disable custom cursor on mobile
+      this.disableCustomCursor = true
 
     const links = Array.from(document.querySelectorAll('a'))
     const buttons = Array.from(document.querySelectorAll('button'))
