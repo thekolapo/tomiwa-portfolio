@@ -31,7 +31,7 @@
           >
           and a sometimes <span class="c-hero__text-yogi">yogi</span>.
         </p>
-        <a class="c-hero__scroll" href="#work">
+        <a v-if="showScrollIndicator" class="c-hero__scroll" href="#work">
           <svg
             viewBox="0 0 120 120"
             fill="transparent"
@@ -127,7 +127,7 @@
           />
         </svg>
         <h4 class="c-skillset__skill-title">Content Strategy</h4>
-        <p class="c-skillset__skill-subtext">
+        <p class="c-section__subtext">
           The first step is always to understand what you’re trying to do and
           why you’re trying to do it. After that potentially energy zapping
           conversation, I will create a content map that highlights the best
@@ -154,7 +154,7 @@
         <h4 class="c-skillset__skill-title">
           Product Marketing and Content Development
         </h4>
-        <p class="c-skillset__skill-subtext">
+        <p class="c-section__subtext">
           Finding the right customers for your product. I will work with your
           user research team and research similar products to determine who your
           ideal customers and build a marketing strategy that speaks directly to
@@ -204,7 +204,7 @@
           />
         </svg>
         <h4 class="c-skillset__skill-title">Copywriting</h4>
-        <p class="c-skillset__skill-subtext">
+        <p class="c-section__subtext">
           A multitalented royal, I will leverage my copywriting, storytelling,
           analytics, content strategy and delivery skills to grab the attention
           of the right audience and position your product as the market leader
@@ -244,7 +244,7 @@
           </defs>
         </svg>
         <h4 class="c-skillset__skill-title">Content Manager</h4>
-        <p class="c-skillset__skill-subtext">
+        <p class="c-section__subtext">
           Need someone to execute or manage a specific part of your newsletters
           or subject-specific blog posts? Call me!
         </p>
@@ -257,66 +257,67 @@
         Now that you know a little about me, let’s talk about you
       </p>
       <div class="c-contact__links">
-        <a href="" target="_blank">say hello</a>
-        <a href="" target="_blank" class="c-link c-link--dashed">
-          <svg
-            width="115"
-            height="47"
-            viewBox="0 0 115 47"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M68.0592 7.6971C49.8087 7.6971 31.7253 6.91686 13.9861 11.7952C5.36498 14.166 1 24.6304 1 32.9773C1 35.8784 5.22391 36.7199 7.54625 37.3947C19.4675 40.859 32.1029 39.8221 44.3223 40.7743C54.7604 41.5876 64.8427 44.935 75.2441 45.9102C81.187 46.4673 88.1538 46.651 93.8982 44.7925C98.972 43.151 100.844 38.8197 103.957 34.7869C107.016 30.8238 110.862 26.6375 112.978 22.0669C113.996 19.8687 114.216 15.9464 112.393 14.1901C109.352 11.2617 105.207 10.2364 101.402 8.65508C94.7321 5.88299 87.8505 3.97176 80.7259 2.72088C70.429 0.913033 59.1128 0.812438 48.6865 1.73628C43.8617 2.1638 39.2228 3.34774 34.4764 4.2377C30.3032 5.02017 26.0992 5.38186 22.0225 6.63267C17.8115 7.92467 12.1422 11.4587 9.38239 14.8554C8.05659 16.4872 8.18491 17.6262 8.18491 19.6719"
-              stroke="#F59494"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          twitter
-        </a>
-        <a href="" target="_blank" class="c-link c-link--dashed">
-          <svg
-            width="159"
-            height="50"
-            viewBox="0 0 159 50"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M65.567 6.28683C50.8321 6.28683 34.6692 11.3701 20 13C13.2192 13.7534 10.9234 14.0406 5.62781 18.2772C-3.49253 25.5734 4.6798 33.6326 9.1135 42.5C12.4534 49.1798 16.7704 45.8616 23 48.5C27.9657 50.6031 35.6167 47.717 41 48.5C46.7619 49.3381 52.3297 49.3467 58 48.5C73.7919 46.1419 92.0899 46.909 108 48.5C115.365 49.2365 120.095 48.4486 127.5 48.5C132.062 48.5317 138.589 47.4983 143 46.126C147.957 44.584 151.283 46.9515 154.353 42.5C157.259 38.285 157.997 40.0391 158.271 35.0959C158.549 30.0973 158.177 27.7843 154.353 24.2471C150.158 20.3675 144.521 17.5933 138.714 17.3896C119.585 16.7184 100.683 11.8039 81.6043 10.532C70.065 9.7627 58.5993 10.8286 47.2075 8.20985C41.0512 6.7946 34.6407 3.88574 28.9933 1.06201"
-              stroke="#AD94F5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          instagram
-        </a>
-        <a href="" target="_blank" class="c-link c-link--dashed">
-          <svg
-            width="107"
-            height="17"
-            viewBox="0 0 107 17"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0.515381 6.21734C26.1344 6.21734 51.1998 1.38916 76.7316 1.38916C82.7093 1.38916 88.6871 1.38916 94.6648 1.38916C97.6887 1.38916 100.349 3.14911 103.287 3.45838C103.722 3.5042 105.627 3.99789 105.892 4.30139C107.912 6.60943 99.7821 4.84405 96.734 5.18273C92.2147 5.68488 87.6767 5.17495 83.1692 5.60423C78.5885 6.04049 73.9521 7.51574 69.4893 8.63142C59.9786 11.0091 49.7786 12.4691 40.0604 13.8045C31.7394 14.9478 23.7552 15.184 15.3831 15.184C12.9082 15.184 10.5592 15.8737 8.10252 15.8737C1.93823 15.8737 11.8185 15.8737 13.2372 15.8737C35.6034 15.8737 57.872 15.184 80.2186 15.184C88.3901 15.184 95.9573 11.7353 103.976 11.7353"
-              stroke="#0B7F98"
-              stroke-opacity="0.51"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          linkedin
-        </a>
+        <div><a href="" target="_blank">say hello</a></div>
+        <div>
+          <a href="" target="_blank" class="c-link c-link--dashed">
+            <svg
+              width="115"
+              height="47"
+              viewBox="0 0 115 47"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M68.0592 7.6971C49.8087 7.6971 31.7253 6.91686 13.9861 11.7952C5.36498 14.166 1 24.6304 1 32.9773C1 35.8784 5.22391 36.7199 7.54625 37.3947C19.4675 40.859 32.1029 39.8221 44.3223 40.7743C54.7604 41.5876 64.8427 44.935 75.2441 45.9102C81.187 46.4673 88.1538 46.651 93.8982 44.7925C98.972 43.151 100.844 38.8197 103.957 34.7869C107.016 30.8238 110.862 26.6375 112.978 22.0669C113.996 19.8687 114.216 15.9464 112.393 14.1901C109.352 11.2617 105.207 10.2364 101.402 8.65508C94.7321 5.88299 87.8505 3.97176 80.7259 2.72088C70.429 0.913033 59.1128 0.812438 48.6865 1.73628C43.8617 2.1638 39.2228 3.34774 34.4764 4.2377C30.3032 5.02017 26.0992 5.38186 22.0225 6.63267C17.8115 7.92467 12.1422 11.4587 9.38239 14.8554C8.05659 16.4872 8.18491 17.6262 8.18491 19.6719"
+                stroke="#F59494"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            twitter
+          </a>
+          <a href="" target="_blank" class="c-link c-link--dashed">
+            <svg
+              width="159"
+              height="50"
+              viewBox="0 0 159 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M65.567 6.28683C50.8321 6.28683 34.6692 11.3701 20 13C13.2192 13.7534 10.9234 14.0406 5.62781 18.2772C-3.49253 25.5734 4.6798 33.6326 9.1135 42.5C12.4534 49.1798 16.7704 45.8616 23 48.5C27.9657 50.6031 35.6167 47.717 41 48.5C46.7619 49.3381 52.3297 49.3467 58 48.5C73.7919 46.1419 92.0899 46.909 108 48.5C115.365 49.2365 120.095 48.4486 127.5 48.5C132.062 48.5317 138.589 47.4983 143 46.126C147.957 44.584 151.283 46.9515 154.353 42.5C157.259 38.285 157.997 40.0391 158.271 35.0959C158.549 30.0973 158.177 27.7843 154.353 24.2471C150.158 20.3675 144.521 17.5933 138.714 17.3896C119.585 16.7184 100.683 11.8039 81.6043 10.532C70.065 9.7627 58.5993 10.8286 47.2075 8.20985C41.0512 6.7946 34.6407 3.88574 28.9933 1.06201"
+                stroke="#AD94F5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            instagram
+          </a>
+          <a href="" target="_blank" class="c-link c-link--dashed">
+            <svg
+              width="107"
+              height="17"
+              viewBox="0 0 107 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.515381 6.21734C26.1344 6.21734 51.1998 1.38916 76.7316 1.38916C82.7093 1.38916 88.6871 1.38916 94.6648 1.38916C97.6887 1.38916 100.349 3.14911 103.287 3.45838C103.722 3.5042 105.627 3.99789 105.892 4.30139C107.912 6.60943 99.7821 4.84405 96.734 5.18273C92.2147 5.68488 87.6767 5.17495 83.1692 5.60423C78.5885 6.04049 73.9521 7.51574 69.4893 8.63142C59.9786 11.0091 49.7786 12.4691 40.0604 13.8045C31.7394 14.9478 23.7552 15.184 15.3831 15.184C12.9082 15.184 10.5592 15.8737 8.10252 15.8737C1.93823 15.8737 11.8185 15.8737 13.2372 15.8737C35.6034 15.8737 57.872 15.184 80.2186 15.184C88.3901 15.184 95.9573 11.7353 103.976 11.7353"
+                stroke="#0B7F98"
+                stroke-opacity="0.51"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            linkedin
+          </a>
+        </div>
       </div>
     </section>
     <section ref="footer" class="c-section c-footer">
       <div class="c-footer__column">
         <span>© 2020</span>
         <span class="c-footer__site-designer">
-          Made in Lagos by
           <a
             href=""
             target="_blank"
@@ -346,10 +347,13 @@ export default {
     return {
       backgroundIsLightMode: true,
       defaultBackgroundCOlor: null,
+      showScrollIndicator: true,
       footerButtonText: 'Green mode',
     }
   },
   mounted() {
+    if (window.innerWidth <= 750) this.showScrollIndicator = false
+
     this.defaultBackgroundCOlor = window
       .getComputedStyle(document.body)
       .getPropertyValue('background-color')
@@ -418,12 +422,25 @@ export default {
 <style lang="scss" scoped>
 .container {
   margin: 0 auto;
+  max-width: 1920px;
 }
 
 nav,
 .c-section {
   width: 80%;
   margin: 0 auto;
+
+  @media screen and (max-width: 1440px) {
+    width: 85%;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 90%;
+  }
+
+  @include screen('small') {
+    width: 93%;
+  }
 }
 
 nav {
@@ -443,12 +460,36 @@ nav {
   &__heading {
     position: relative;
     font-size: 11.3rem;
-    font-size: 6.73vw;
     font-family: 'PlayfairDisplay';
     font-weight: normal;
     text-transform: uppercase;
     color: transparent;
     z-index: -1;
+
+    @media screen and (max-width: 1680px) {
+      font-size: 6.73vw;
+    }
+
+    @media screen and (max-width: 1440px) {
+      font-size: 6.6vw;
+    }
+
+    @media screen and (max-width: 1280px) {
+      font-size: 6.4vw;
+    }
+
+    @media screen and (max-width: 1024px) {
+      font-size: 6vw;
+      font-weight: 500;
+    }
+
+    @include screen('med-small') {
+      font-size: 10vw;
+    }
+
+    @include screen('small') {
+      font-weight: 600;
+    }
 
     &::after {
       position: absolute;
@@ -475,12 +516,23 @@ nav {
 
   &__subtext {
     font-size: 3rem;
+    // font-size: 1.786vw;
     line-height: 45px;
     margin-top: 60px;
     max-width: 750px;
     opacity: var(--subtext-opacity);
     transform: translateY(var(--subtext-translate-value));
     transition: transform 2s $easeOutExpo 0.4s, opacity 2s $easeOutExpo 0.5s;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 2.8rem;
+      line-height: 42px;
+    }
+
+    @include screen('med') {
+      font-size: 2.6rem;
+      line-height: 40px;
+    }
   }
 }
 
@@ -533,13 +585,31 @@ a,
   text-align: right;
   transform: translateX(15px);
   margin: 200px 0px 60px;
+
+  @media screen and (max-width: 1440px) {
+    font-size: 33rem;
+  }
+
+  @media screen and (max-width: 1280px) {
+    font-size: 31rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    font-size: 28rem;
+    margin-top: 140px;
+  }
+
+  @include screen('small') {
+    font-size: 16rem;
+    margin-top: 100px;
+  }
 }
 
 .c-hero {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-top: 110px;
-  // $anim-duration: 1.4s;
   $anim-duration: 1.2s;
   $anim-delay: 0.3s;
 
@@ -561,6 +631,10 @@ a,
     }
   }
 
+  @media screen and (max-width: 1440px) {
+    margin-top: 90px;
+  }
+
   &__text {
     &-wrap {
       display: flex;
@@ -568,6 +642,14 @@ a,
       padding-top: 70px;
       width: 50%;
       z-index: 1;
+
+      @include screen('med-small') {
+        width: 100%;
+      }
+
+      @media screen and (max-width: 800px) {
+        padding-top: 40px;
+      }
     }
 
     &-yogi {
@@ -604,12 +686,12 @@ a,
 
     &::after {
       content: 'Adetomiwa Isiaka';
-      width: 140%;
+      width: 100%;
       animation: slidein $anim-duration $easeOutExpo $anim-delay forwards;
     }
 
     &::before {
-      width: 140%;
+      width: 85vw;
       animation: fadeout 0s calc(#{$anim-delay} + 0.5s) forwards;
     }
   }
@@ -623,15 +705,29 @@ a,
         calc(#{$anim-delay} + 0.5s) forwards,
       fadein calc(#{$anim-duration} + 0.5s) $easeOutExpo
         calc(#{$anim-delay} + 0.6s) forwards;
+
+    @include screen('med-small') {
+      max-width: 100%;
+    }
   }
 
   &__image {
     position: relative;
-    width: 525px;
+    width: 50%;
     height: 80vh;
+    max-width: 525px;
+    min-height: 640px;
     max-height: 725px;
     overflow: hidden;
     z-index: 0;
+
+    @include screen('med-small') {
+      max-width: 100%;
+      width: 100%;
+      margin-top: 50px;
+      min-height: auto;
+      height: auto;
+    }
 
     @keyframes scaleoverlay {
       to {
@@ -648,7 +744,7 @@ a,
     &-overlay {
       position: absolute;
       width: 100%;
-      height: 100%;
+      height: 101%;
       left: 0;
       z-index: 10;
       background-color: $color-linen;
@@ -660,7 +756,7 @@ a,
     img {
       transition: 1.2s $easeOutExpo;
       object-fit: cover;
-      height: 100%;
+      height: auto;
       width: 100%;
       animation: scaleimage calc(#{$anim-duration} + 0.8s) $easeOutExpo
         calc(#{$anim-delay} + 0.6s);
@@ -774,15 +870,28 @@ a,
     flex-direction: column;
     margin-top: 60px;
 
+    @include screen('med') {
+      margin-top: 100px;
+    }
+
     &--first {
       margin-top: 85px;
     }
 
     &-icon {
+      --size: 250px;
       float: right;
       margin-left: auto;
-      width: 250px;
-      height: 250px;
+      width: var(--size);
+      height: var(--size);
+
+      @media screen and (max-width: 1280px) {
+        --size: 230px;
+      }
+
+      @include screen('med') {
+        display: none;
+      }
     }
 
     &-title {
@@ -792,15 +901,14 @@ a,
       text-transform: uppercase;
     }
 
-    &-subtext {
+    .c-section__subtext {
       max-width: 740px;
-      // font-size: 2.5rem;
-      // line-height: 40px;
-      // margin-top: 20px;
-
-      font-size: 3rem;
-      line-height: 45px;
       margin-top: 30px;
+      transition-property: none;
+
+      @include screen('med') {
+        max-width: 100%;
+      }
     }
   }
 }
@@ -821,15 +929,40 @@ a,
     font-weight: normal;
     text-transform: uppercase;
 
-    a:first-child {
-      $scale: 220px;
+    @include screen('med-small') {
+      & > :first-child {
+        width: 35%;
+      }
+
+      & > :last-child {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 40px;
+
+        @include screen('small') {
+          margin-left: 30px;
+        }
+
+        a {
+          &:first-child {
+            margin-top: 0px;
+          }
+          margin-top: 30px;
+        }
+      }
+    }
+
+    & > :first-child a {
+      --size: 220px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 100%;
       font-size: 2rem;
-      width: $scale;
-      height: $scale;
+      width: var(--size);
+      height: var(--size);
       color: $color-linen;
       background: $color-green;
       flex-shrink: 0;
@@ -837,6 +970,10 @@ a,
 
       &:hover {
         transform: scale(1.12);
+      }
+
+      @include screen('small') {
+        --size: 170px;
       }
     }
 
@@ -846,13 +983,18 @@ a,
       margin-left: 68px;
       color: black;
 
+      @include screen('med') {
+        margin-left: 50px;
+        font-size: 2.2rem;
+      }
+
       svg {
         position: absolute;
         stroke-width: 1.3px;
         transition: 0.4s linear;
       }
 
-      &:nth-child(2) svg {
+      &:first-child svg {
         --length: 330;
         left: -10px;
         top: -15px;
@@ -860,7 +1002,7 @@ a,
         stroke-dashoffset: var(--length);
       }
 
-      &:nth-child(3) svg {
+      &:nth-child(2) svg {
         --length: 390;
         top: -22px;
         left: -14px;
@@ -886,6 +1028,7 @@ a,
   margin-top: 165px;
   margin-bottom: 60px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   font-size: 2rem;
@@ -893,9 +1036,11 @@ a,
 
   &__column {
     width: 33.33%;
+    flex-shrink: 0;
 
     &:first-child {
       transform: translateY(-7%);
+      z-index: 2;
     }
 
     &:nth-child(2) {
@@ -909,6 +1054,51 @@ a,
 
   &__site-designer {
     margin-left: 35px;
+    &::before {
+      content: 'Made in Lagos by';
+    }
+
+    @include screen('small') {
+      &::before {
+        content: 'Made by';
+      }
+    }
+  }
+
+  @media screen and (max-width: 1270px) {
+    &__column {
+      width: 25%;
+
+      &:first-child {
+        width: 50%;
+      }
+    }
+
+    &__site-designer {
+      margin-left: 10px;
+    }
+  }
+
+  @include screen('med-small') {
+    &__column {
+      width: 50%;
+
+      &:first-child {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+        order: 3;
+      }
+
+      &:nth-child(2) {
+        text-align: left;
+      }
+    }
+
+    &__site-designer {
+      transform: translateY(-20%);
+    }
   }
 
   a,
