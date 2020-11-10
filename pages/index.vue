@@ -1032,6 +1032,7 @@ a,
       font-size: 2.4rem;
       margin-left: 68px;
       color: black;
+      float: left;
 
       @include screen('med') {
         margin-left: 50px;
