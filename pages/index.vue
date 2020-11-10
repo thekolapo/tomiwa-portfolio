@@ -257,9 +257,15 @@
         Now that you know a little about me, let’s talk about you
       </p>
       <div class="c-contact__links">
-        <div><a href="" target="_blank">say hello</a></div>
         <div>
-          <a href="" target="_blank" class="c-link c-link--dashed">
+          <a href="mailto:isiakatomiwa@gmail.com" target="_blank">say hello</a>
+        </div>
+        <div>
+          <a
+            href="https://twitter.com/bellexsans"
+            target="_blank"
+            class="c-link c-link--dashed"
+          >
             <svg
               width="115"
               height="47"
@@ -276,7 +282,11 @@
             </svg>
             twitter
           </a>
-          <a href="" target="_blank" class="c-link c-link--dashed">
+          <a
+            href="https://www.instagram.com/gurusista/"
+            target="_blank"
+            class="c-link c-link--dashed"
+          >
             <svg
               width="159"
               height="50"
@@ -293,7 +303,11 @@
             </svg>
             instagram
           </a>
-          <a href="" target="_blank" class="c-link c-link--dashed">
+          <a
+            href="https://www.linkedin.com/in/adetomiwa-isiaka-11ba47107"
+            target="_blank"
+            class="c-link c-link--dashed"
+          >
             <svg
               width="107"
               height="17"
@@ -319,7 +333,7 @@
         <span>© 2020</span>
         <span class="c-footer__site-designer">
           <a
-            href=""
+            href="https://twitter.com/kolapo_"
             target="_blank"
             class="c-link c-link--green c-link--underline"
           >
@@ -546,7 +560,7 @@ nav {
     @include screen('small') {
       margin-top: 26px;
       font-size: 2.4rem;
-      line-height: 38px;
+      line-height: 37px;
     }
   }
 }
@@ -984,6 +998,10 @@ a,
           margin-top: 30px;
         }
       }
+    }
+
+    @include screen('small') {
+      margin-top: 60px;
     }
 
     & > :first-child a {
