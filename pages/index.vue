@@ -395,7 +395,7 @@ export default {
             this.$refs.footerButton.style.setProperty('--translate-value', '0%')
             // this.$refs.footerButton.style.pointerEvents = 'auto'
           }, 50)
-        }, 300)
+        }, 400)
       }
 
       animateButton()
@@ -450,12 +450,20 @@ nav {
   font-weight: normal;
   text-transform: uppercase;
   margin-top: 30px;
+
+  @include screen('small') {
+    font-size: 1.6rem;
+  }
 }
 
 .c-section {
   --h1-translate-value: 100%;
   --subtext-opacity: 0;
   --subtext-translate-value: 100%;
+
+  @include screen('small') {
+    --subtext-translate-value: 20%;
+  }
 
   &__heading {
     position: relative;
@@ -488,6 +496,7 @@ nav {
     }
 
     @include screen('small') {
+      font-size: 3.5rem;
       font-weight: 600;
     }
 
@@ -532,6 +541,12 @@ nav {
     @include screen('med') {
       font-size: 2.6rem;
       line-height: 40px;
+    }
+
+    @include screen('small') {
+      margin-top: 26px;
+      font-size: 2.4rem;
+      line-height: 38px;
     }
   }
 }
@@ -600,8 +615,8 @@ a,
   }
 
   @include screen('small') {
-    font-size: 16rem;
-    margin-top: 100px;
+    font-size: 12rem;
+    margin-top: 80px;
     transform: translateX(0px);
   }
 }
@@ -634,6 +649,10 @@ a,
 
   @media screen and (max-width: 1440px) {
     margin-top: 90px;
+  }
+
+  @include screen('small') {
+    margin-top: 50px;
   }
 
   &__text {
@@ -709,6 +728,10 @@ a,
 
     @include screen('med-small') {
       max-width: 100%;
+    }
+
+    @include screen('small') {
+      margin-top: 26px;
     }
   }
 
@@ -900,6 +923,10 @@ a,
       font-family: 'PlayfairDisplay';
       font-weight: 700;
       text-transform: uppercase;
+
+      @include screen('small') {
+        font-size: 2.3rem;
+      }
     }
 
     .c-section__subtext {
@@ -909,6 +936,10 @@ a,
 
       @include screen('med') {
         max-width: 100%;
+      }
+
+      @include screen('small') {
+        margin-top: 21px;
       }
     }
   }
@@ -987,6 +1018,10 @@ a,
       @include screen('med') {
         margin-left: 50px;
         font-size: 2.2rem;
+      }
+
+      @include screen('small') {
+        font-size: 1.94rem;
       }
 
       svg {
@@ -1100,6 +1135,12 @@ a,
     &__site-designer {
       transform: translateY(-20%);
     }
+  }
+
+  @include screen('small') {
+    font-size: 1.7rem;
+    margin-bottom: 40px;
+    margin-top: 150px;
   }
 
   a,
