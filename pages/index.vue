@@ -560,7 +560,7 @@ nav {
     @include screen('small') {
       margin-top: 26px;
       font-size: 2.4rem;
-      line-height: 37px;
+      line-height: 36px;
     }
   }
 }
