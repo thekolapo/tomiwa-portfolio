@@ -916,10 +916,8 @@ a,
     position: relative;
     width: $size;
     height: $size;
-    // background-color: $color-green;
     margin-top: auto;
     border-radius: 100px;
-    // border: 0.5px solid rgb(134, 134, 134);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -959,7 +957,7 @@ a,
       --length: 375;
       stroke-dasharray: var(--length);
       stroke-dashoffset: var(--length);
-      transform: rotate(-45deg);
+      transform: rotate(-90deg);
       animation: drawcircle $anim-duration linear $anim-delay forwards;
     }
 

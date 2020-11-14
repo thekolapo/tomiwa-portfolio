@@ -1,16 +1,18 @@
 <template>
   <div ref="imgLoader" class="c-image-loader">
-    <div class="c-image-loader__counter">
-      <span>{{ counter }}</span>
-      <div class="c-image-loader__overlay"></div>
+    <div class="c-image-loader__container">
+      <div class="c-image-loader__counter">
+        <span>{{ counter }}</span>
+        <div class="c-image-loader__overlay"></div>
+      </div>
+      <svg
+        class="c-image-loader__stroke"
+        viewBox="0 0 120 120"
+        fill="transparent"
+      >
+        <circle cx="60" cy="60" r="59.5" stroke="black" stroke-width="0.5" />
+      </svg>
     </div>
-    <svg
-      class="c-image-loader__stroke"
-      viewBox="0 0 120 120"
-      fill="transparent"
-    >
-      <circle cx="60" cy="60" r="59.5" stroke="black" stroke-width="0.5" />
-    </svg>
   </div>
 </template>
 
@@ -61,7 +63,7 @@ export default {
   top: 0;
   z-index: 10;
   display: flex;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
   --text-anim-duration: 1s;
   --text-translate-value: 0%;
@@ -84,6 +86,15 @@ export default {
     to {
       opacity: 1;
     }
+  }
+
+  &__container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__counter {
@@ -132,7 +143,8 @@ export default {
     animation: drawcircle $transition-duration ease-out
         calc(var(--text-anim-duration) - #{$transition-duration}),
       reveal 0s linear
-        calc(var(--text-anim-duration) - #{$transition-duration} + 5ms) forwards;
+        calc(var(--text-anim-duration) - #{$transition-duration} + 50ms)
+        forwards;
   }
 }
 </style>
