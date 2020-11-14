@@ -45,7 +45,7 @@ export default {
     },
     hideImgLoader() {
       setTimeout(() => {
-        this.$parent.heroImgIsLoading = false
+        this.$parent.hideImgLoader()
       }, 1500)
     },
   },

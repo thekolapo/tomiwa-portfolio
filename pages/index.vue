@@ -449,6 +449,23 @@ export default {
       .getPropertyValue('background-color')
   },
   methods: {
+    hideImgLoader() {
+      this.heroImgIsLoading = false
+      setTimeout(() => {
+        const observer = new IntersectionObserver(this.onElementObserved)
+        const observableSections = [
+          this.$refs.skillsetSection,
+          this.$refs.contactSection,
+          this.$refs.copywritingSection,
+          this.$refs.uxWritingSection,
+          this.$refs.contentManagerSection,
+        ]
+
+        observableSections.forEach((section) => {
+          observer.observe(section)
+        })
+      }, 10)
+    },
     loadHeroImage() {
       const vm = this
       const img = new Image()
@@ -457,18 +474,6 @@ export default {
 
       img.onload = () => {
         vm.$refs.imgLoader.completeLoaderAnim()
-        const observer = new IntersectionObserver(vm.onElementObserved)
-        const observableSections = [
-          vm.$refs.skillsetSection,
-          vm.$refs.contactSection,
-          vm.$refs.copywritingSection,
-          vm.$refs.uxWritingSection,
-          vm.$refs.contentManagerSection,
-        ]
-
-        observableSections.forEach((section) => {
-          observer.observe(section)
-        })
       }
     },
     changeBGColor() {
