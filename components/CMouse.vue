@@ -66,5 +66,6 @@ export default {
   transform-origin: center;
   border: solid 1px rgb(158, 158, 158);
   transition: var(--trans-time) $easeOutExpo;
+  z-index: 100;
 }
 </style>
