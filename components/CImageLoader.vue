@@ -131,8 +131,8 @@ export default {
     transition: $transition-duration ease-out 0.5s;
     animation: drawcircle $transition-duration ease-out
         calc(var(--text-anim-duration) - #{$transition-duration}),
-      reveal 0s linear calc(var(--text-anim-duration) - #{$transition-duration})
-        forwards;
+      reveal 0s linear
+        calc(var(--text-anim-duration) - #{$transition-duration} + 5ms) forwards;
   }
 }
 </style>
