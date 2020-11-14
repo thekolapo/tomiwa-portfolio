@@ -24,6 +24,10 @@ export default {
     }
   },
   mounted() {
+    this.$refs.imgLoader.style.setProperty(
+      '--loader-height',
+      window.innerHeight
+    )
     this.startCounter()
   },
   methods: {
@@ -56,9 +60,10 @@ export default {
 
 <style lang="scss" scoped>
 .c-image-loader {
+  --loader-height: 100vh;
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: var(--loader-height);
   background-color: var(--bg-color);
   top: 0;
   z-index: 10;
