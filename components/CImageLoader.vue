@@ -24,10 +24,6 @@ export default {
     }
   },
   mounted() {
-    this.$refs.imgLoader.style.setProperty(
-      '--loader-height',
-      window.innerHeight
-    )
     this.startCounter()
   },
   methods: {
@@ -60,10 +56,9 @@ export default {
 
 <style lang="scss" scoped>
 .c-image-loader {
-  --loader-height: 100vh;
   position: absolute;
   width: 100vw;
-  height: var(--loader-height);
+  height: 100vh;
   background-color: var(--bg-color);
   top: 0;
   z-index: 10;
@@ -100,6 +95,10 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include screen('small') {
+      top: 40%;
+    }
   }
 
   &__counter {

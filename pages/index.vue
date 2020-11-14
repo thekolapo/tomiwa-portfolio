@@ -670,8 +670,8 @@ nav {
 
     @include screen('small') {
       margin-top: 26px;
-      font-size: 2.4rem;
-      line-height: 36px;
+      font-size: 2.3rem;
+      line-height: 34px;
     }
   }
 }
@@ -1059,7 +1059,7 @@ a,
       text-transform: uppercase;
 
       @include screen('small') {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
       }
     }
 
