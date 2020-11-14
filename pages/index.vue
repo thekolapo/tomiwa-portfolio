@@ -28,6 +28,7 @@
             >. I’m also a contributor at
             <a
               href="https://globalvoices.org/author/adetomiwa-isiaka/"
+              target="_blank"
               class="c-link c-link--green c-link--underline"
               >Global Voices</a
             >
@@ -621,7 +622,7 @@ nav {
     }
 
     @include screen('small') {
-      font-size: 3.5rem;
+      font-size: 3.4rem;
       font-weight: 600;
     }
 
@@ -670,8 +671,8 @@ nav {
 
     @include screen('small') {
       margin-top: 26px;
-      font-size: 2.3rem;
-      line-height: 34px;
+      font-size: 2.2rem;
+      line-height: 32px;
     }
   }
 }
@@ -1059,7 +1060,7 @@ a,
       text-transform: uppercase;
 
       @include screen('small') {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
       }
     }
 
