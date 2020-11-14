@@ -18,20 +18,21 @@ export default {
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
       // disable custom cursor on mobile
       this.disableCustomCursor = true
-
-    const links = Array.from(document.querySelectorAll('a'))
-    const buttons = Array.from(document.querySelectorAll('button'))
-    const clickableElements = links.concat(buttons)
-    clickableElements.forEach((element) => {
-      element.addEventListener('mouseover', () => {
-        this.$refs.cMouse.style.setProperty('--size', '66px')
-      })
-      element.addEventListener('mouseleave', () => {
-        this.$refs.cMouse.style.setProperty('--size', '38px')
-      })
-    })
   },
   methods: {
+    init() {
+      const links = Array.from(document.querySelectorAll('a'))
+      const buttons = Array.from(document.querySelectorAll('button'))
+      const clickableElements = links.concat(buttons)
+      clickableElements.forEach((element) => {
+        element.addEventListener('mouseover', () => {
+          this.$refs.cMouse.style.setProperty('--size', '66px')
+        })
+        element.addEventListener('mouseleave', () => {
+          this.$refs.cMouse.style.setProperty('--size', '38px')
+        })
+      })
+    },
     trackCursor(event) {
       this.$refs.cMouse.style.transform = `translate3d(${
         event.clientX - this.size / 2

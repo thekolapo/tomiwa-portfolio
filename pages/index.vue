@@ -1,6 +1,6 @@
 <template>
   <div id="#" class="container">
-    <c-mouse />
+    <c-mouse ref="customCursor" />
     <c-image-loader v-if="heroImgIsLoading" ref="imgLoader" />
     <div v-else>
       <nav>
@@ -452,6 +452,7 @@ export default {
     hideImgLoader() {
       this.heroImgIsLoading = false
       setTimeout(() => {
+        this.$refs.customCursor.init()
         const observer = new IntersectionObserver(this.onElementObserved)
         const observableSections = [
           this.$refs.skillsetSection,
