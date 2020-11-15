@@ -4,13 +4,38 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Adetomiwa Isiaka',
+    title: 'Adetomiwa Isiaka - Content Developer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: `I'm Adetomiwa Isiaka, a product marketer, content strategist, copywriter & user-centric marketing evangelist.`,
+      },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://adetomiwa.me/' },
+      { property: 'og:title', content: 'Adetomiwa Isiaka - Content Developer' },
       {
         property: 'og:image',
+        content: 'https://adetomiwa.netlify.app/seo-image.png',
+      },
+      {
+        property: 'og:description',
+        content: `I'm Adetomiwa Isiaka, a product marketer, content strategist, copywriter & user-centric marketing evangelist.`,
+      },
+      { property: 'twitter:card', content: 'summary_large_image' },
+      { property: 'twitter:url', content: 'https://adetomiwa.me/' },
+      {
+        property: 'twitter:title',
+        content: 'Adetomiwa Isiaka - Content Developer',
+      },
+      {
+        property: 'twitter:description',
+        content: `I'm Adetomiwa Isiaka, a product marketer, content strategist, copywriter & user-centric marketing evangelist.`,
+      },
+      {
+        property: 'twitter:image',
         content: 'https://adetomiwa.netlify.app/seo-image.png',
       },
     ],
