@@ -18,7 +18,7 @@ export default {
       { property: 'og:title', content: 'Adetomiwa Isiaka - Content Developer' },
       {
         property: 'og:image',
-        content: 'https://adetomiwa.me/seo-image.png',
+        content: 'https://www.adetomiwa.me/seo-image.png',
       },
       {
         property: 'og:description',
@@ -36,7 +36,7 @@ export default {
       },
       {
         property: 'twitter:image',
-        content: 'https://adetomiwa.me/seo-image.png',
+        content: 'https://www.adetomiwa.me/seo-image.png',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
