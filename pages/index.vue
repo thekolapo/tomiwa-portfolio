@@ -1326,6 +1326,7 @@ a,
 
       @include screen('small') {
         --size: 170px;
+        font-size: 1.8rem;
       }
     }
 
