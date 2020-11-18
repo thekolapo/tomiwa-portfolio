@@ -405,7 +405,7 @@
       </section>
       <section ref="footer" class="c-section c-footer">
         <div class="c-footer__column">
-          <span>© 2020</span>
+          <span>© {{ new Date().getUTCFullYear() }}</span>
           <span class="c-footer__site-designer">
             <a
               href="https://twitter.com/kolapo_"
