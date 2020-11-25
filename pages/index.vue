@@ -446,22 +446,25 @@ export default {
       .getPropertyValue('background-color')
   },
   methods: {
+    init() {
+      this.$refs.customCursor.init()
+      const observer = new IntersectionObserver(this.onElementObserved)
+      const observableSections = [
+        this.$refs.skillsetSection,
+        this.$refs.contactSection,
+        this.$refs.copywritingSection,
+        this.$refs.uxWritingSection,
+        this.$refs.contentManagerSection,
+      ]
+
+      observableSections.forEach((section) => {
+        observer.observe(section)
+      })
+    },
     hideImgLoader() {
       this.heroImgIsLoading = false
       setTimeout(() => {
-        this.$refs.customCursor.init()
-        const observer = new IntersectionObserver(this.onElementObserved)
-        const observableSections = [
-          this.$refs.skillsetSection,
-          this.$refs.contactSection,
-          this.$refs.copywritingSection,
-          this.$refs.uxWritingSection,
-          this.$refs.contentManagerSection,
-        ]
-
-        observableSections.forEach((section) => {
-          observer.observe(section)
-        })
+        this.init()
       }, 10)
     },
     changeBGColor() {
