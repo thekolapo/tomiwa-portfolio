@@ -24,9 +24,20 @@ export default {
     }
   },
   mounted() {
+    this.loadHeroImage()
     this.startCounter()
   },
   methods: {
+    loadHeroImage() {
+      const vm = this
+      const img = new Image()
+      img.src =
+        'https://res.cloudinary.com/daitiebum/image/upload/v1604398570/tomiwa-website/tomiwa-min.jpg'
+
+      img.onload = () => {
+        vm.completeLoaderAnim()
+      }
+    },
     startCounter() {
       setTimeout(() => {
         this.counter = 20

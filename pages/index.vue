@@ -429,9 +429,6 @@
 </template>
 
 <script>
-// import 'lazysizes'
-// import 'lazysizes/plugins/parent-fit/ls.parent-fit'
-
 export default {
   data() {
     return {
@@ -443,7 +440,6 @@ export default {
     }
   },
   mounted() {
-    this.loadHeroImage()
     if (window.innerWidth <= 750) this.showScrollIndicator = false
     this.defaultBackgroundColor = window
       .getComputedStyle(document.body)
@@ -467,16 +463,6 @@ export default {
           observer.observe(section)
         })
       }, 10)
-    },
-    loadHeroImage() {
-      const vm = this
-      const img = new Image()
-      img.src =
-        'https://res.cloudinary.com/daitiebum/image/upload/v1604398570/tomiwa-website/tomiwa-min.jpg'
-
-      img.onload = () => {
-        vm.$refs.imgLoader.completeLoaderAnim()
-      }
     },
     changeBGColor() {
       if (this.backgroundIsLightMode)
