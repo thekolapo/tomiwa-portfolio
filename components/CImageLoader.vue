@@ -118,6 +118,10 @@ export default {
     font-family: 'Canela';
     font-variant-numeric: tabular-nums;
 
+    @media screen and (min-width: 1920px) {
+      font-size: 2.08vw;
+    }
+
     span {
       display: inline-block;
       z-index: 1;
@@ -144,12 +148,12 @@ export default {
   }
 
   &__stroke {
-    $size: 170px;
+    --size: 170px;
     $transition-duration: 0.6s;
     position: absolute;
     z-index: 3;
-    width: $size;
-    height: $size;
+    width: var(--size);
+    height: var(--size);
     opacity: 0;
     stroke-dasharray: var(--stroke-length);
     stroke-dashoffset: var(--stroke-dashoffset);
@@ -160,6 +164,10 @@ export default {
       reveal 0s linear
         calc(var(--text-anim-duration) - #{$transition-duration} + 50ms)
         forwards;
+
+    @media screen and (min-width: 1920px) {
+      --size: 10.12vw;
+    }
   }
 }
 </style>

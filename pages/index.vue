@@ -529,7 +529,6 @@ export default {
 <style lang="scss" scoped>
 .container {
   margin: 0 auto;
-  max-width: 1920px;
 }
 
 @keyframes fadein {
@@ -566,6 +565,11 @@ nav {
   opacity: 0;
   animation: fadein 0.8s linear forwards;
 
+  @media screen and (min-width: 1920px) {
+    font-size: 1.07vw;
+    margin-top: 1.79vw;
+  }
+
   @include screen('small') {
     font-size: 1.6rem;
   }
@@ -588,6 +592,10 @@ nav {
     text-transform: uppercase;
     color: transparent;
     z-index: -1;
+
+    @media screen and (min-width: 1920px) {
+      font-size: 6.73vw;
+    }
 
     @media screen and (max-width: 1680px) {
       font-size: 6.73vw;
@@ -640,13 +648,18 @@ nav {
 
   &__subtext {
     font-size: 3rem;
-    // font-size: 1.786vw;
     line-height: 45px;
     margin-top: 60px;
     max-width: 750px;
     opacity: var(--subtext-opacity);
     transform: translateY(var(--subtext-translate-value));
     transition: transform 2s $easeOutExpo 0.4s, opacity 2s $easeOutExpo 0.5s;
+
+    @media screen and (min-width: 1920px) {
+      font-size: 1.786vw;
+      line-height: 2.7vw;
+      max-width: 44.64vw;
+    }
 
     @media screen and (max-width: 1024px) {
       font-size: 2.8rem;
@@ -716,6 +729,11 @@ a,
   transform: translateX(15px);
   margin: 200px 0px 60px;
 
+  @media screen and (min-width: 1920px) {
+    font-size: 20vw;
+    margin: 11.9vw 0px 3.57vw;
+  }
+
   @media screen and (max-width: 1440px) {
     font-size: 33rem;
   }
@@ -754,6 +772,10 @@ a,
     to {
       opacity: 0;
     }
+  }
+
+  @media screen and (min-width: 1920px) {
+    margin-top: 6.55vw;
   }
 
   @media screen and (max-width: 1440px) {
@@ -835,6 +857,10 @@ a,
       fadein calc(#{$anim-duration} + 0.5s) $easeOutExpo
         calc(#{$anim-delay} + 0.6s) forwards;
 
+    @media screen and (min-width: 1920px) {
+      max-width: 36.9vw;
+    }
+
     @include screen('med-small') {
       max-width: 100%;
     }
@@ -853,6 +879,12 @@ a,
     max-height: 725px;
     overflow: hidden;
     z-index: 0;
+
+    @media screen and (min-width: 1920px) {
+      max-width: 31.25vw;
+      max-height: none;
+      height: auto;
+    }
 
     @include screen('med-small') {
       max-width: 100%;
@@ -880,10 +912,11 @@ a,
       height: 101%;
       left: 0;
       z-index: 10;
+      transform: scale(1.3);
+      transform-origin: bottom;
       background-color: $color-linen;
       animation: scaleoverlay calc(#{$anim-duration} - 0.2s) $easeOutExpo
         calc(#{$anim-delay} + 0.6s) forwards;
-      transform-origin: bottom;
     }
 
     img {
@@ -917,6 +950,21 @@ a,
     $anim-delay: 2s;
     $anim-duration: 0.42s;
     cursor: pointer;
+    --arrow-size: 25px;
+
+    @media screen and (min-width: 1920px) {
+      $size: 4.76vw;
+      margin-left: 0.5vw;
+
+      &-arrow {
+        --arrow-size: 1.49vw;
+      }
+
+      &-circle {
+        width: $size;
+        height: $size;
+      }
+    }
 
     @keyframes drawcircle {
       to {
@@ -931,7 +979,7 @@ a,
       height: $size;
       background-color: $color-green;
       transform: translate(45%, -30%) scale(0.8);
-      border-radius: inherit;
+      border-radius: 100%;
       z-index: -1;
       pointer-events: none;
       opacity: 0;
@@ -949,12 +997,16 @@ a,
       stroke-dashoffset: var(--length);
       transform: rotate(-90deg);
       animation: drawcircle $anim-duration linear $anim-delay forwards;
+
+      @media screen and (min-width: 1920px) {
+        width: $size;
+        height: $size;
+      }
     }
 
     &-arrow {
-      $size: 25px;
-      width: $size;
-      height: $size;
+      width: var(--arrow-size);
+      height: var(--arrow-size);
       transform: translateY(-40%);
       opacity: 0;
       animation: slidein calc(#{$anim-duration} + 0.8s) $easeOutExpo
@@ -1021,6 +1073,10 @@ a,
       height: var(--size);
       animation: float 3s ease-in-out var(--icon-anim-delay) infinite alternate;
 
+      @media screen and (min-width: 1920px) {
+        --size: 14.9vw;
+      }
+
       @media screen and (max-width: 1280px) {
         --size: 230px;
       }
@@ -1048,6 +1104,10 @@ a,
       font-weight: 700;
       text-transform: uppercase;
 
+      @media screen and (min-width: 1920px) {
+        font-size: 1.55vw;
+      }
+
       @include screen('small') {
         font-size: 2.1rem;
       }
@@ -1057,6 +1117,10 @@ a,
       max-width: 740px;
       margin-top: 30px;
       transition-property: none;
+
+      @media screen and (min-width: 1920px) {
+        max-width: 44vw;
+      }
 
       @include screen('med') {
         max-width: 100%;
@@ -1266,6 +1330,10 @@ a,
     font-weight: normal;
     text-transform: uppercase;
 
+    @media screen and (min-width: 1920px) {
+      margin-top: 4.76vw;
+    }
+
     @include screen('med-small') {
       & > :first-child {
         width: 35%;
@@ -1313,6 +1381,11 @@ a,
         transform: scale(1.12);
       }
 
+      @media screen and (min-width: 1920px) {
+        --size: 13.1vw;
+        font-size: 1.19vw;
+      }
+
       @include screen('small') {
         --size: 170px;
         font-size: 1.8rem;
@@ -1325,6 +1398,11 @@ a,
       margin-left: 68px;
       color: black;
       float: left;
+
+      @media screen and (min-width: 1920px) {
+        font-size: 1.43vw;
+        margin-left: 4.05vw;
+      }
 
       @include screen('med') {
         margin-left: 50px;
@@ -1410,6 +1488,12 @@ a,
         content: 'Made by';
       }
     }
+  }
+
+  @media screen and (min-width: 1920px) {
+    font-size: 1.19vw;
+    margin-top: 9.82vw;
+    margin-bottom: 3.57vw;
   }
 
   @media screen and (max-width: 1270px) {
