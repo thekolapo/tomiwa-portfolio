@@ -935,10 +935,11 @@ a,
   }
 
   &__scroll {
-    $size: 80px;
+    --size: 80px;
+    --arrow-size: 25px;
     position: relative;
-    width: $size;
-    height: $size;
+    width: var(--size);
+    height: var(--size);
     margin-top: auto;
     border-radius: 100px;
     display: flex;
@@ -950,19 +951,12 @@ a,
     $anim-delay: 2s;
     $anim-duration: 0.42s;
     cursor: pointer;
-    --arrow-size: 25px;
 
     @media screen and (min-width: 1920px) {
-      $size: 4.76vw;
-      margin-left: 0.5vw;
+      --size: 4.76vw;
 
       &-arrow {
         --arrow-size: 1.49vw;
-      }
-
-      &-circle {
-        width: $size;
-        height: $size;
       }
     }
 
@@ -972,11 +966,15 @@ a,
       }
     }
 
+    &::after,
+    &-circle {
+      position: absolute;
+      width: var(--size);
+      height: var(--size);
+    }
+
     &::after {
       content: '';
-      position: absolute;
-      width: $size;
-      height: $size;
       background-color: $color-green;
       transform: translate(45%, -30%) scale(0.8);
       border-radius: 100%;
@@ -989,19 +987,11 @@ a,
     }
 
     &-circle {
-      position: absolute;
-      width: 100%;
-      height: 100%;
       --length: 375;
       stroke-dasharray: var(--length);
       stroke-dashoffset: var(--length);
       transform: rotate(-90deg);
       animation: drawcircle $anim-duration linear $anim-delay forwards;
-
-      @media screen and (min-width: 1920px) {
-        width: $size;
-        height: $size;
-      }
     }
 
     &-arrow {
