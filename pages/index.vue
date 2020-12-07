@@ -882,8 +882,8 @@ a,
 
     @media screen and (min-width: 1920px) {
       max-width: 31.25vw;
-      max-height: none;
       height: auto;
+      max-height: calc(100vh - 200px);
     }
 
     @include screen('med-small') {
