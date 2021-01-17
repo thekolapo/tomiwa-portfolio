@@ -412,8 +412,8 @@
               target="_blank"
               class="c-link c-link--green c-link--underline"
             >
-              Kolapo</a
-            >
+              Kolapo
+            </a>
             🤘🏾
           </span>
         </div>
@@ -1470,12 +1470,12 @@ a,
   &__site-designer {
     margin-left: 35px;
     &::before {
-      content: 'Made in Lagos by';
+      content: 'Made in Lagos by ';
     }
 
     @include screen('small') {
       &::before {
-        content: 'Made by';
+        content: 'Made by ';
       }
     }
   }
