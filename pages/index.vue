@@ -78,7 +78,7 @@
         /> -->
           <img
             id="js-hero-img"
-            src="https://res.cloudinary.com/daitiebum/image/upload/v1604398570/tomiwa-website/tomiwa-min.jpg"
+            src="~/assets/images/tomiwa-min.jpg"
             alt="tomiwa's picture"
           />
         </div>

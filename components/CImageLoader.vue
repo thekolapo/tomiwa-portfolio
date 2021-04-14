@@ -31,8 +31,7 @@ export default {
     loadHeroImage() {
       const vm = this
       const img = new Image()
-      img.src =
-        'https://res.cloudinary.com/daitiebum/image/upload/v1604398570/tomiwa-website/tomiwa-min.jpg'
+      img.src = '~/assets/images/tomiwa-min.jpg'
 
       img.onload = () => {
         vm.completeLoaderAnim()
