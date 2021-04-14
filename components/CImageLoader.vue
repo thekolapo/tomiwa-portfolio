@@ -31,7 +31,7 @@ export default {
     loadHeroImage() {
       const vm = this
       const img = new Image()
-      img.src = '~/assets/images/tomiwa-min.jpg'
+      img.src = require(`@/assets/images/tomiwa-min.jpg`)
 
       img.onload = () => {
         vm.completeLoaderAnim()
