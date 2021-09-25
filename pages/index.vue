@@ -32,7 +32,7 @@
               class="c-link c-link--green c-link--underline"
               >Global Voices</a
             >
-            and a sometimes <span class="c-hero__text-yogi">yogi</span>.
+            and at sometimes <span class="c-hero__text-yogi">yogi</span>.
           </p>
           <a v-if="showScrollIndicator" class="c-hero__scroll" href="#work">
             <svg
